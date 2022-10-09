@@ -1,0 +1,12 @@
+<%- include('./partials/head.ejs') %>
+    <h1>howdy</h1>
+
+    <% vintage.forEach((products, i) => { %>
+        <a href="vintage/<%= products._id %>"> <%= products.name %> </a>
+        <p><%= products.title %> </p>
+        <p><%= products.price %> </p>
+        
+    <% }) %>
+
+
+<%- include('./partials/foot.ejs') %>
