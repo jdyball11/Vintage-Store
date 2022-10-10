@@ -1,3 +1,4 @@
+require('dotenv').config()
 
 const express = require('express')
 const ensureLogin = require('connect-ensure-login')
@@ -13,8 +14,8 @@ const authController = require('./controllers/auth')
 const vintageController = require('./controllers/vintage')
 
 const app = express()
-const PORT = 3000
-const dbURL = "mongodb://localhost:27017/vintage"
+const PORT = process.env.PORT
+const dbURL = process.env.MONGODB_URL
 const MongoDBStore = mongoDBSession(session)
 const sessionStore = new MongoDBStore({
   uri: dbURL,
@@ -22,9 +23,10 @@ const sessionStore = new MongoDBStore({
 })
 
 app.use(express.urlencoded( { extended: true } ))
+app.use(express.static('public'))
 app.use(methodOverride('_method'))
 app.use(session({
-    secret: 'secret',
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     store: sessionStore
@@ -38,31 +40,12 @@ passport.deserializeUser(User.deserializeUser())
 app.use(authController)
 app.use(vintageController)
 
-//     const newProducts = {
-//         name: 'Nick',
-//         title: 'Addidas Jacket',
-//         price: 70,
-//         description: 'Addidas Jacket from the 70s',
-//         watching: 0,
-//         style: 'Jacket',
-//         brand: 'Addidas',
-//         era: '1970s',
-//     }
-
-  
-// Vintage.create(newProducts)
-//   .then((doc) => {
-//     // doc is the document that was created
-//     console.log(doc)
-//   })
-//   .catch((err) => {
-//     console.log(err)
-//   })
-
 
 
 app.get('/', (req, res) => {
-    res.render('home.ejs')
+    res.render('home.ejs', {
+        name: req.user?.username
+    })
   })
 
 

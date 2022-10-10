@@ -5,7 +5,9 @@ const router = express.Router()
 
 //Register route/page
 router.get('/register', (req, res) => {
-  res.render('register.ejs')
+  res.render('register.ejs', {
+    name: req.user?.username
+  })
 })
 
 //POST to store new user data
@@ -20,13 +22,16 @@ router.post('/register', async (req, res) => {
   })
 })
 
+
 router.post('/login', passport.authenticate('local', {
     failureRedirect: '/login',
     successRedirect: '/vintage'
   }))
 
 router.get('/login', (req, res) => {
-  res.render('login.ejs')
+  res.render('login.ejs', {
+    name: req.user?.username
+  })
 })
 
 //when any user logs out they will redirected to the index/main page

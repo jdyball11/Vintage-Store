@@ -1,7 +1,49 @@
 <%- include('./partials/head.ejs') %>
-
+<p>User: <%= name.username %></p>
 <h1>Create page</h1>
 
+<!-- insert below into to form tag after method -->
+<!-- enctype="multipart/form-data" -->
+<form action="/vintage" method="post" enctype="multipart/form-data">
+    
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" required/>
 
+    <br />
+
+    <label for="title">Title</label>
+    <input type="text" name="title" id="title" required/>
+  
+    <br />
+    <label for="price">Price</label>
+    <input type="text" name="price" id="price" required/>
+  
+    <br />
+    <label for="description">Description</label>
+    <textarea name="description" id="description"></textarea>
+  
+    <br />
+    <label for="style">Style</label>
+    <input type="text" name="style" id="style"></input>
+  
+    <br />
+    <br />
+    <label for="brand">Brand</label>
+    <input type="text" name="brand" id="brand"></input>
+  
+    <br />
+    <br />
+    <label for="era">Era</label>
+    <input type="text" name="era" id="era"></input>
+  
+    <br />
+    <label for="image">Image</label>
+    <input type="file" name="image" id="image">
+
+    <br/>
+
+    <input type="hidden" id="user_id" name="user_id" value="<%= name._id %>">
+    <input type="submit" value="Add New Item" id="" />
+  </form>
 
 <%- include('./partials/foot.ejs') %>

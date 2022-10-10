@@ -1,0 +1,22 @@
+<%- include('./partials/head.ejs') %>
+<p>User: <%= name.username %></p>
+<h1>My Collection</h1>
+
+<a href="/vintage/mycollection/create">Add New Item</a>
+<p><%= vintage._id %></p>
+<% vintage.forEach((element) => { %>
+    <% if (element.user_id.valueOf() === name._id.valueOf()) { %>
+   <p><%= element.title %></p>
+   <p> Price: $<%= element.price %> </p>
+   <img src="<%= element.imageURL %>" alt="Image">
+   <a href="/vintage/myCollection/edit/<%= element._id %>">Edit Product</a> 
+   <form action="/vintage/myCollection/<%= element._id %>?_method=DELETE" method="post">
+    <input type="submit" value="Remove from Collection" />
+  </form>
+    <% } %>
+        
+<% }) %>
+
+
+
+<%- include('./partials/foot.ejs') %>

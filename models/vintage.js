@@ -2,8 +2,7 @@
 const mongoose = require('mongoose')
 
 const vintageSchema = new mongoose.Schema({
-
-    // url: {type: String, required: true},
+    user_id: { type: mongoose.Schema.Types.ObjectId, require: true },
     name: { type: String, required: true },
     title: {type: String, required: true },
     price: { type: Number, required: true },

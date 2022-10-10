@@ -1,6 +1,70 @@
-<%- include('./partials/foot.ejs') %>
-
+<%- include('./partials/head.ejs') %>
+<p>User: <%= name.username %></p>
 <h1>EdIt page</h1>
+
+<h3><%= vintage.title %></h3>
+
+<form action="/vintage/edit/<%= vintage._id %>?_method=PUT" method="post">
+    <p>
+      <label for="title">Title:</label>
+      <input
+        type="text"
+        name="title"
+        id="title"
+        value="<%= vintage.title %>"
+        required
+      />
+    </p>
+<p>
+      <label for="price">Price</label>
+      <input
+        type="text"
+        name="price"
+        id="price"
+        value="<%= vintage.price %>"
+        required
+      />
+    </p>
+    <p>
+        <label for="style">Style</label>
+        <input
+          type="text"
+          name="stock"
+          id="stock"
+          value="<%= vintage.style %>"
+          required
+        />
+      </p>
+      <p>
+        <label for="brand">Brand</label>
+        <input
+          type="text"
+          name="brand"
+          id="brand"
+          value="<%= vintage.brand %>"
+        />
+      </p>
+      <p>
+        <label for="era">Era</label>
+        <input
+          type="text"
+          name="era"
+          id="era"
+          value="<%= vintage.era %>"
+        />
+      </p>
+      <p>
+        <label for="description">Description</label>
+        <textarea name="description" id="description"></textarea>
+      </p>
+    </p>
+    <label for="image">Image</label>
+    <input type="file" name="image" id="image">
+    <p>
+    <input type="submit" value="Edit Item" />
+    <img src="<%= %>" alt="">
+  </form>
+
 
 <%- include('./partials/foot.ejs') %>
     

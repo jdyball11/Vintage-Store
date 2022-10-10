@@ -1,6 +1,12 @@
 <%- include('./partials/head.ejs') %>
-    <h1>howdy</h1>
-
+  <p>User: <%= name %></p>
+    <h1>Express Yourself</h1>
+    <% if (name) { %>
+        <a href="/vintage/myCollection">My Collection</a> 
+        <% } else { %>
+            <h3>Welcome non user</h3>
+            <% } %>
+    <br />
     <% vintage.forEach((products, i) => { %>
         <a href="vintage/<%= products._id %>"> <%= products.name %> </a>
         <p><%= products.title %> </p>
