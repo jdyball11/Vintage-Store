@@ -1,22 +1,51 @@
 <%- include('./partials/head.ejs') %>
-<p>User: <%= name.username %></p>
-<h1>My Collection</h1>
+<nav class="index-headers">
+    <div class="index-title">
+        <h1>Express Yourself</h1>
+        <h5>My Collection</h5>
+    </div>
+    <div class="index-user">
+        <ul>
+            <li>
+                <form method="post" action="/logout">
+                <input type="submit" value="Logout" class="logout"/></form>
+            </li>
+            <li><a href="/vintage">Home</a></li>
+            <li><a href="/vintage/mycollection/create">Add New Item</a></li>
+            <li> User: <%= name.username %></li>
+        </ul>
+   
+    </div>
+</nav>
 
-<a href="/vintage/mycollection/create">Add New Item</a>
-<p><%= vintage._id %></p>
+<p><%= vintage._id %></p>\
+<div class="collection-container">
+    <% if (messages.success) { %>
+        <% for (let msg of messages.success) { %>
+            <p><%= msg %> </p>
+        <% } %>
+        
+    <% } %>
 <% vintage.forEach((element) => { %>
-    <% if (element.user_id.valueOf() === name._id.valueOf()) { %>
-   <p><%= element.title %></p>
-   <p> Price: $<%= element.price %> </p>
-   <img src="<%= element.imageURL %>" alt="Image">
-   <a href="/vintage/myCollection/edit/<%= element._id %>">Edit Product</a> 
-   <form action="/vintage/myCollection/<%= element._id %>?_method=DELETE" method="post">
-    <input type="submit" value="Remove from Collection" />
-  </form>
+     <% if (element.user_id.valueOf() === name._id.valueOf()) { %>
+        <div class="collection-items">
+            <div class="collection-head">
+                <h3><%= element.title %></h3>
+                <h6> Price: $<%= element.price %> </h6>
+            </div>    
+                <img src="<%= element.imageURL %>" class="coll-img" alt="Image" >
+            <div class="collection-buttons">
+                <a href="/vintage/myCollection/edit/<%= element._id %>">Edit Product</a> 
+                <form action="/vintage/myCollection/<%= element._id %>?_method=DELETE" method="post">
+                <input type="submit" value="Remove from Collection" />
+                </form>
+            
+            </div
+        ></div>
     <% } %>
         
 <% }) %>
-
+</div>
 
 
 <%- include('./partials/foot.ejs') %>

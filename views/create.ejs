@@ -1,49 +1,56 @@
 <%- include('./partials/head.ejs') %>
-<p>User: <%= name.username %></p>
-<h1>Create page</h1>
 
-<!-- insert below into to form tag after method -->
-<!-- enctype="multipart/form-data" -->
+<nav class="index-headers">
+    <div class="index-title">
+        <h1>Express Yourself</h1>
+        <h5>Add Item to Collection</h5>
+    </div>
+    <div class="index-user">
+        <ul>
+            <li>
+                <form method="post" action="/logout">
+                <input type="submit" value="Logout" class="logout"/></form>
+            </li>
+            <li><a href="/vintage">Home</a></li>
+            <li> User: <%= name.username %></li>
+        </ul>
+   
+    </div>
+</nav>
+
+
+
 <form action="/vintage" method="post" enctype="multipart/form-data">
+    <div class="create-container">
+  
+    <label for="title"></label>
+    <input type="text" name="title" id="title" placeholder="Title" required/>
+  
     
-    <label for="name">Name</label>
-    <input type="text" name="name" id="name" required/>
+    <label for="price"></label>
+    <input type="text" name="price" id="price" placeholder="Price" required/>
 
-    <br />
+    
+    <label for="style"></label>
+    <input type="text" name="style" id="style" placeholder="Style"></input>
+  
+   
+    <label for="brand"></label>
+    <input type="text" name="brand" id="brand" placeholder="Brand"></input>
+  
+  
+    <label for="era"></label>
+    <input type="text" name="era" id="era" placeholder="Era"></input>
 
-    <label for="title">Title</label>
-    <input type="text" name="title" id="title" required/>
-  
-    <br />
-    <label for="price">Price</label>
-    <input type="text" name="price" id="price" required/>
-  
-    <br />
-    <label for="description">Description</label>
-    <textarea name="description" id="description"></textarea>
-  
-    <br />
-    <label for="style">Style</label>
-    <input type="text" name="style" id="style"></input>
-  
-    <br />
-    <br />
-    <label for="brand">Brand</label>
-    <input type="text" name="brand" id="brand"></input>
-  
-    <br />
-    <br />
-    <label for="era">Era</label>
-    <input type="text" name="era" id="era"></input>
-  
-    <br />
-    <label for="image">Image</label>
-    <input type="file" name="image" id="image">
+    <label for="description"></label>
+    <textarea name="description" id="description" placeholder="Description"></textarea>
 
-    <br/>
+    <label for="image"></label>
+    <input type="file" name="image" id="image" required>
 
-    <input type="hidden" id="user_id" name="user_id" value="<%= name._id %>">
-    <input type="submit" value="Add New Item" id="" />
+    <input type="submit" value="Add New Item" id="submit-btn" />
+</div>  
   </form>
+
 
 <%- include('./partials/foot.ejs') %>

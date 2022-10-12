@@ -8,6 +8,8 @@ const session = require('express-session')
 const methodOverride = require('method-override')
 const mongoDBSession = require('connect-mongodb-session')
 
+const { notFoundHandler, errorHandler } = require('./middlewares/error-handlers')
+const flash = require('express-flash')
 const User = require('./models/users')
 const Vintage = require('./models/vintage')
 const authController = require('./controllers/auth')
@@ -31,22 +33,25 @@ app.use(session({
     saveUninitialized: false,
     store: sessionStore
 }))
+app.use(flash())
 app.use(passport.initialize())
 app.use(passport.session())
+
 passport.use(User.createStrategy())
 passport.serializeUser(User.serializeUser())
 passport.deserializeUser(User.deserializeUser())
-
-app.use(authController)
-app.use(vintageController)
-
-
 
 app.get('/', (req, res) => {
     res.render('home.ejs', {
         name: req.user?.username
     })
   })
+
+app.use(authController)
+app.use(vintageController)
+app.use(errorHandler)
+app.use(notFoundHandler)
+
 
 
 mongoose.connect(dbURL, () => {

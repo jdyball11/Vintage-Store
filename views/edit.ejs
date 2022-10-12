@@ -1,12 +1,29 @@
 <%- include('./partials/head.ejs') %>
-<p>User: <%= name.username %></p>
-<h1>EdIt page</h1>
 
+
+<nav class="index-headers">
+    <div class="index-title">
+        <h1>Express Yourself</h1>
+        <h5>Update Item</h5>
+    </div>
+    <div class="index-user">
+        <ul>
+            <li>
+                <form method="post" action="/logout">
+                <input type="submit" value="Logout" class="logout"/></form>
+            </li>
+            <li><a href="/vintage">Home</a></li>
+            <li> User: <%= name.username %></li>
+        </ul>
+   
+    </div>
+</nav>
+<section class="edit-container"></section>
 <h3><%= vintage.title %></h3>
 
-<form action="/vintage/edit/<%= vintage._id %>?_method=PUT" method="post">
-    <p>
-      <label for="title">Title:</label>
+<form action="/vintage/edit/<%= vintage._id %>?_method=PUT" enctype="multipart/form-data" method="post">
+    <div class="create-container">
+      <label for="title"></label>
       <input
         type="text"
         name="title"
@@ -14,9 +31,8 @@
         value="<%= vintage.title %>"
         required
       />
-    </p>
-<p>
-      <label for="price">Price</label>
+    
+      <label for="price"></label>
       <input
         type="text"
         name="price"
@@ -24,47 +40,46 @@
         value="<%= vintage.price %>"
         required
       />
-    </p>
-    <p>
-        <label for="style">Style</label>
+    
+        <label for="style"></label>
         <input
           type="text"
-          name="stock"
-          id="stock"
+          name="style"
+          id="style"
           value="<%= vintage.style %>"
           required
         />
-      </p>
-      <p>
-        <label for="brand">Brand</label>
+      
+        <label for="brand"></label>
         <input
           type="text"
           name="brand"
           id="brand"
           value="<%= vintage.brand %>"
         />
-      </p>
-      <p>
-        <label for="era">Era</label>
+      
+        <label for="era"></label>
         <input
           type="text"
           name="era"
           id="era"
           value="<%= vintage.era %>"
         />
-      </p>
-      <p>
-        <label for="description">Description</label>
-        <textarea name="description" id="description"></textarea>
-      </p>
-    </p>
-    <label for="image">Image</label>
+      
+        <label for="description"></label>
+        <textarea name="description" id="description" value="<%= vintage.description %>"></textarea>
+     
+    <label for="image"></label>
     <input type="file" name="image" id="image">
-    <p>
-    <input type="submit" value="Edit Item" />
-    <img src="<%= %>" alt="">
+    
+    <input type="submit" value="Edit Item" id="edit-btn"/>
+    
+    </div>
   </form>
 
-
+  <div class="image-div">
+    <img src="<%=vintage.imageURL %>" id="edit-img" alt="image">
+</div>
+</section>
 <%- include('./partials/foot.ejs') %>
     

@@ -1,7 +1,24 @@
 <%- include('./partials/head.ejs') %>
-<p>User: <%= name.username %></p>
 
-    <h1>show page</h1>
+<nav class="index-headers">
+    <div class="index-title">
+        <h1>Express Yourself</h1>
+        
+    </div>
+    <div class="index-user">
+        <ul>
+            <li>
+                <form method="post" action="/logout">
+                <input type="submit" value="Logout" class="logout"/></form>
+            </li>
+            <li><a href="/vintage">Home</a></li>
+            <li><a href="/vintage/myCollection">My Collection</a> </li>
+            <li> User: <%= name.username %></li>
+        </ul>
+   
+    </div>
+</nav>
+
     <p><%= products.title %> </p>
     <p><%= products.price %> </p>
     <p><%= products.style %> </p>

@@ -1,18 +1,66 @@
 <%- include('./partials/head.ejs') %>
-  <p>User: <%= name %></p>
-    <h1>Express Yourself</h1>
-    <% if (name) { %>
-        <a href="/vintage/myCollection">My Collection</a> 
-        <% } else { %>
-            <h3>Welcome non user</h3>
-            <% } %>
-    <br />
-    <% vintage.forEach((products, i) => { %>
-        <a href="vintage/<%= products._id %>"> <%= products.name %> </a>
-        <p><%= products.title %> </p>
-        <p><%= products.price %> </p>
-        
-    <% }) %>
+    <section class="index-container">
+        <nav class="index-headers">
+            <div class="index-title">
+                <h1>Express Yourself</h1>
+            </div>
+            <div class="index-user">
+                <ul>
+                    <% if (name) { %>
+                        <li> User: <%=name%></li>
+                        <li>
+                            <form method="post" action="/logout">
+                            <input type="submit" value="Logout" class="logout"/></form>
+                        </li>
+                        <li><a href="/vintage/myCollection">My Collection</a> </li>
+                        <% } else { %>
+                        <li><a href="/register">Register</a></li>
+                        <li><a href="/login">Login</a></li>
+                        <% } %>
+                        
+                </ul>
+           
+            </div>
+        </nav>
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./Images/northface tee (1).jpg" class="d-block w-100" alt="images">
+              </div>
+              <div class="carousel-item">
+                <img src="./Images/ralph group photo.jpeg" class="d-block w-100" alt="images">
+              </div>
+              <div class="carousel-item">
+                <img src="./Images/bathing ape blue jump.jpg" class="d-block w-100" alt="images">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
 
+        
+            <div class="products-container">
+            <% vintage.forEach((products, i) => { %>
+                <div class="index-items">
+                   <h3><%= products.username %></h3>
+                    
+                    <img src="<%= products.imageURL %>" class="index-img" alt="Images">
+                    
+                    <a href="vintage/<%= products._id %>"> <%= products.title %> </a>
+
+                    <span><%= products.price %></span>
+                </div>
+            
+            <% }) %>
+        </div>
+            
+    </section>
 
 <%- include('./partials/foot.ejs') %>

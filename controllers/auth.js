@@ -13,6 +13,7 @@ router.get('/register', (req, res) => {
 //POST to store new user data
 router.post('/register', async (req, res) => {
   const { username, password } = req.body
+  try {
   const user = await User.register(
     new User({ username: username }),
     password
@@ -20,18 +21,27 @@ router.post('/register', async (req, res) => {
   req.login(user, () => {
     res.redirect('/vintage')
   })
+} catch (error) {
+    req.flash(error.message)
+    res.redirect('/register')
+}
 })
 
 
 router.post('/login', passport.authenticate('local', {
     failureRedirect: '/login',
-    successRedirect: '/vintage'
+    successRedirect: '/vintage',
+    failureFlash: true
   }))
 
 router.get('/login', (req, res) => {
-  res.render('login.ejs', {
-    name: req.user?.username
-  })
+    if (req.isAuthenticated()) {
+        res.redirect('/vintage')
+    } else {
+        res.render('login.ejs', {
+            name: req.user?.username
+          })
+    }
 })
 
 //when any user logs out they will redirected to the index/main page
