@@ -1,0 +1,47 @@
+<%- include('./partials/head.ejs') %>
+
+<nav class="index-headers">
+    <div class="index-title">
+        <h1>Express Yourself</h1>
+        <h5>Watchlist</h5>
+    </div>
+    <div class="index-user">
+        <ul>
+            <li>
+                <form method="post" action="/logout">
+                <input type="submit" value="Logout" class="logout"/></form>
+            </li>
+            <li><a href="/vintage">Home</a></li>
+            <li> User: <%= name.username %></li>
+            
+        </ul>
+       
+   
+    </div>
+    
+</nav>
+<div class="watching-container">
+    
+    <% vintage.forEach((item, i) => { %>
+           <% item.watching?.filter(id => { %>
+            <% if (id.valueOf() === name._id.valueOf()) { %>
+               <div class="watching-items">
+                    <div class="watching-head">
+                        <h5><%= item.title %></h5>
+                        <h6> <%= item.price %> </h6>
+                        <img src="<%= item.imageURL %>" class="watch-img" alt="Image" >
+                    </div>
+                    
+                    <div class="watching-buttons">
+                        <a href="/vintage/<%= item._id %>">View Product</a> 
+                    </div>      
+                
+               </div>
+          <% }}) %>
+           
+       <% }) %>
+        
+    </div>
+
+
+<%- include('./partials/foot.ejs') %>

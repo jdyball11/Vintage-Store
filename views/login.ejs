@@ -1,8 +1,9 @@
 <%- include('./partials/head.ejs') %> 
 
 <%- include('./partials/flash.ejs') %>
+<h1 class="login-head">Login</h1>
 <div class="login-container">
-<h1>Login</h1>
+
 <form method="post" action="/login">
   <label for="username">Username</label>
   <input type="text" name="username" id="username" required />
@@ -12,5 +13,10 @@
 
   <input type="submit" value="Login" />
 </form>
+
+<% if (messages.success) { %>
+    <% for (let msg of messages.success) { %>
+        <p><%= msg %> </p>
+    <% }} %>
 </div>
 <%- include('./partials/foot.ejs') %>

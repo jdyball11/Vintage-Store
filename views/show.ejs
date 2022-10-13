@@ -19,11 +19,30 @@
     </div>
 </nav>
 
-    <p><%= products.title %> </p>
-    <p><%= products.price %> </p>
-    <p><%= products.style %> </p>
-    <p><%= products.brand %> </p>
-    <p><%= products.era %> </p>
+<div class="show-products">
+    <div class="show-img">
+        <img src="<%= products.imageURL %>" alt="">
+      </div>
+    <div class="show-details">
+        <p>Title: <%= products.title %> </p>
+        <p>Price: <%= products.price %> </p>
+        <p>Style: <%= products.style %> </p>
+        <p>Brand: <%= products.brand %> </p>
+        <p>Era: <%= products.era %> </p>
+        <p>Description: <%= products.description %></p>
+        <% if (products.stock === 0) { %>
+            <p class="OOS">OUT OF STOCK</p>
+            <% } else { %>
+                <form action="/vintage/<%= products._id %>/buy?_method=PUT" method="post">
+                    <input type="submit" value="Purchase" id="watch-buy"/>
+                </form>
+                <form action="/vintage/<%= products._id %>/watching?_method=PUT" method="post">
+                    <input type="submit" value="Watch Item" id="watch-btn" />
+                </form>
+            <% } %>
+            
+    </div>    
+</div> 
 
 
 

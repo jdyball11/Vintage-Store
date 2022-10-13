@@ -13,6 +13,22 @@ body {
     color: white
 }
 
+.price {
+    margin: 1rem 0 1rem 0;
+
+}
+
+.anchor {
+    margin: 1rem 0 1rem 0;
+    color: black;
+    text-decoration: none;
+}
+
+.anchor:hover {
+    opacity: 0.5;
+}
+
+
 /* index pages */
 
 .index-headers {
@@ -108,7 +124,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 200px;
+    width: 300px;
     margin: 4rem 7rem; 
 }
 
@@ -116,6 +132,11 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.coll-head {
+    display: flex;
+    flex-direction: column;
 }
 
 .coll-img {
@@ -130,6 +151,62 @@ body {
     align-items: center;
 
 }
+
+.watching-container {
+    background-color: tomato;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.watching-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    margin: 2rem 4rem; 
+}
+
+.watching-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.watch-img {
+    min-width: 75px;
+    max-width: 150px;
+    
+}
+
+.watching-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#remove-item {
+    margin: 1rem;
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 3px;
+    padding: 12px 24px;
+    border: 0;
+    color: #000021;
+    background: #35a1dc;
+    line-height: 1.15;
+    font-size: 16px;
+}
+
+
+#remove-item:hover {
+    transition: all .1s ease;
+    box-shadow: 0 0 0 0 #fff, 0 0 0 3px #35a1dc;
+}
+
 
 
 /* Create Container */
@@ -164,6 +241,10 @@ body {
 }
 
 #style {
+    margin: 1rem;
+}
+
+#stock {
     margin: 1rem;
 }
 
@@ -272,10 +353,106 @@ body {
 }
 
 
+.show-products {
+    display: flex;
+    
+}
+
+.show-details {
+    display: flex;
+    flex-direction: column;
+    margin: 3rem 0rem 0rem 10rem
+}
+
+.show-img {
+    margin: 3rem;
+}
+
+#watch-btn {
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 3px;
+    padding: 12px 24px;
+    border: 0;
+    color: #000021;
+    background: #edbf41;
+    line-height: 1.15;
+    font-size: 16px;
+}
 
 
+#watch-btn:hover {
+    transition: all .1s ease;
+    box-shadow: 0 0 0 0 #fff, 0 0 0 3px #e9bd1d;
+}
+
+#watch-buy {
+    margin: 0rem 0 1rem 0;
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 3px;
+    padding: 12px 24px;
+    border: 0;
+    color: #000021;
+    background: #edbf41;
+    line-height: 1.15;
+    font-size: 16px;
+}
 
 
+#watch-buy:hover {
+    transition: all .1s ease;
+    box-shadow: 0 0 0 0 #fff, 0 0 0 3px #e9bd1d;
+}
+.OOS {
+    margin: 0 0 1rem 0;
+    color: red;
+}
+
+/* home login/register */
+
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-login {
+    margin: 10rem;
+    font-size: 3rem;
+}
+
+.home-register {
+    margin: 10rem;
+    font-size: 3rem;
+}
+
+.home-head {
+    font-size: 6rem;
+    text-align: center;
+    margin: 1rem 0 0 0;
+}
+
+/* Login / Register */
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-head {
+    text-align: center;
+    margin: 2rem 0 4rem 0;
+}
+
+.register-head {
+    text-align: center;
+    margin: 2rem 0 4rem 0;
+}
 
 
 @media screen and (max-width: 950px) {

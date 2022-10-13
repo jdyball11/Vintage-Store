@@ -7,10 +7,11 @@ const vintageSchema = new mongoose.Schema({
     title: {type: String, required: true },
     price: { type: Number, required: true },
     description: { type: String },
-    watching: { type: Number, default: 0 },
     style: { type: String },
+    stock: { type: Number, min: 0},
     brand: { type: String },
     era: { type: String },
+    watching: [ {type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
     imageURL: String
     
 })

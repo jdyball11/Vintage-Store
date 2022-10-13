@@ -44,18 +44,21 @@
               <span class="visually-hidden">Next</span>
             </button>
           </div>
-
+          
+        
+       
         
             <div class="products-container">
+                
             <% vintage.forEach((products, i) => { %>
                 <div class="index-items">
                    <h3><%= products.username %></h3>
                     
                     <img src="<%= products.imageURL %>" class="index-img" alt="Images">
                     
-                    <a href="vintage/<%= products._id %>"> <%= products.title %> </a>
+                    <a href="vintage/<%= products._id %>" class="anchor"> <%= products.title %> </a>
 
-                    <span><%= products.price %></span>
+                    <span class="price"> Price: $<%= products.price %></span>
                 </div>
             
             <% }) %>
