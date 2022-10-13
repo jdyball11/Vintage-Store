@@ -1,0 +1,15 @@
+# Express Yourself
+
+A place to share and explore others out there like you with a similar passion for fashion. 
+
+Express Yourself allows users to upload their own items of clothing and journey through others with similar tastes or perhaps vastly different styles. Recycling clothes and passing them onto the next helps the earth!
+
+
+### Built Using
+
+ - HTML, CSS & Javascript front end
+ - Node.js, Express, EJS
+ - MongoDB, Mongoose database manipulation
+ - Multer & Cloudinary 
+ 
+ 

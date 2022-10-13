@@ -4,7 +4,7 @@
 <nav class="index-headers">
     <div class="index-title">
         <h1>Express Yourself</h1>
-        <h5>Update Item</h5>
+        <h4>Update Item</h5>
     </div>
     <div class="index-user">
         <ul>
@@ -18,11 +18,15 @@
    
     </div>
 </nav>
-<section class="edit-container"></section>
-<h3><%= vintage.title %></h3>
+<div class="edit-container">
+
 
 <form action="/vintage/edit/<%= vintage._id %>?_method=PUT" enctype="multipart/form-data" method="post">
-    <div class="create-container">
+    <div class="form-container">
+
+        <h3><%= vintage.title %></h3>
+
+
       <label for="title"></label>
       <input
         type="text"
@@ -67,7 +71,7 @@
         />
       
         <label for="description"></label>
-        <textarea name="description" id="description" value="<%= vintage.description %>"></textarea>
+        <textarea name="description" id="description" placeholder="<%= vintage.description %>"></textarea>
      
     <label for="image"></label>
     <input type="file" name="image" id="image">
@@ -80,6 +84,6 @@
   <div class="image-div">
     <img src="<%=vintage.imageURL %>" id="edit-img" alt="image">
 </div>
-</section>
+</div>
 <%- include('./partials/foot.ejs') %>
     

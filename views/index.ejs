@@ -56,9 +56,11 @@
                     
                     <img src="<%= products.imageURL %>" class="index-img" alt="Images">
                     
+                    <span class="price"> Price: $<%= products.price %></span>
+
                     <a href="vintage/<%= products._id %>" class="anchor"> <%= products.title %> </a>
 
-                    <span class="price"> Price: $<%= products.price %></span>
+                    
                 </div>
             
             <% }) %>

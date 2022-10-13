@@ -37,10 +37,11 @@
         <div class="collection-items">
             <div class="collection-head">
                 <h3 class="coll-head"><%= element.title %></h3>
-                <h6 class="price"> Price: $<%= element.price %> </h6>
+                
             </div>    
                 <img src="<%= element.imageURL %>" class="coll-img" alt="Image" >
             <div class="collection-buttons">
+                <h6 class="price"> Price: $<%= element.price %> </h6>
                 <a href="/vintage/myCollection/edit/<%= element._id %>" class="anchor">Edit Product</a> 
                 <form action="/vintage/myCollection/<%= element._id %>?_method=DELETE" method="post">
                 <input type="submit" value="Remove from Collection" id="remove-item"/>
