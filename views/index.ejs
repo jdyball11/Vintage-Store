@@ -7,17 +7,17 @@
             <div class="index-user">
                 <ul>
                     <% if (name) { %>
-                        <li> User: <%=name%></li>
-                        <li>
-                            <form method="post" action="/logout">
-                            <input type="submit" value="Logout" class="logout"/></form>
-                        </li>
+                        
+                        
+                        <li><form method="post" action="/logout">
+                            <input type="submit" value="Logout" class="logout"/></form></li>
+                       
                         <li><a href="/vintage/myCollection">My Collection</a> </li>
                         <% } else { %>
                         <li><a href="/register">Register</a></li>
                         <li><a href="/login">Login</a></li>
                         <% } %>
-                        
+                        <li> User: <%=name%></li>
                 </ul>
            
             </div>
@@ -58,7 +58,7 @@
                     
                     <span class="price"> Price: $<%= products.price %></span>
 
-                    <a href="vintage/<%= products._id %>" class="anchor"> <%= products.title %> </a>
+                    <a href="vintage/<%= products._id %>" class="anchor-main"> <%= products.title %> </a>
 
                     
                 </div>

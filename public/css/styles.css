@@ -6,6 +6,7 @@ html {
 }
 
 body {
+    background: linear-gradient(rgba(255, 255, 255, 0.611), rgba(255, 255, 255, 0.627)), url(https://cdn.hovia.com/app/uploads/white-warehouse-brick-plain.jpg);
     margin: 0;
     padding: 0;
     height: 100%;
@@ -20,11 +21,12 @@ body {
 .price {
     margin: 1rem 0 1rem 0;
     font-family: 'Russo One', sans-serif;
+    font-size: 1.2rem;
 }
 
 .anchor {
-    font-family: 'Russo One', sans-serif;
-    font-size: 1.3rem;
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1.5rem;
     margin: 0.8rem 0 0.8rem 0;
     color: black;
     text-decoration: none;
@@ -32,11 +34,12 @@ body {
 }
 
 .anchor:hover {
-    opacity: 0.5;
-}
+    color:rgb(160, 150, 150)
+    }
+
 
 h3 {
-    font-family: 'Russo One', sans-serif;
+    font-family: 'Varela Round', sans-serif;
 }
 
 h5 {
@@ -69,6 +72,7 @@ h5 {
 .index-user li {
     list-style: none;
     padding: 2px;
+    margin-right: 1rem;
 }
 
 .index-user li a {
@@ -79,7 +83,7 @@ h5 {
 }
 
 .index-user li:hover {
-    background-color: #555;
+    opacity: 0.5;
 }
 
 .index-products {
@@ -97,7 +101,7 @@ h5 {
 }
 
 .products-container {
-    background-color: tomato;
+    /* background: linear-gradient(rgba(255, 255, 255, 0.462), rgba(255, 255, 255, 0.463)), url(https://cdn.hovia.com/app/uploads/white-warehouse-brick-plain.jpg); */
     display: flex;
     justify-content: space-around;
     flex-direction: row;
@@ -116,12 +120,26 @@ h5 {
     min-width: 150px;
     max-width: 300px;
     object-fit: cover;
-    box-shadow: 10px 5px 5px red;
+    box-shadow: 10px 5px 5px rgb(220, 210, 210);
     border-radius: 10px;
 }
 
 .index-items h3 {
     margin-bottom: 2rem;
+}
+
+.anchor-main {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 1.5rem;
+    margin: 0.8rem 0 0.8rem 0;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    width: 15rem;
+}
+
+.anchor-main:hover {
+    color:rgb(160, 150, 150)
 }
 
 
@@ -131,7 +149,7 @@ h5 {
 
 
 .collection-container {
-    background-color: tomato;
+    /* background: linear-gradient(rgba(255, 255, 255, 0.611), rgba(255, 255, 255, 0.627)), url(https://www.evershinewalls.com.au/wp-content/uploads/2022/07/old-brick-wall-with-white-and-red-bricks.jpg); */
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
@@ -143,7 +161,7 @@ h5 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 200px;
+    width: 150px;
     margin: 4rem 7rem; 
 }
 
@@ -165,15 +183,15 @@ h5 {
     max-width: 300px;
     object-fit: cover;
     border-radius: 10px;
-    box-shadow: 10px 5px 5px red;
+    box-shadow: 10px 5px 5px rgb(230, 228, 228);
 }
 
 .collection-buttons {
     display: flex;
     flex-direction: column;
     align-items: center;
-
 }
+
 
 #remove-item {
     margin: 1rem;
@@ -185,7 +203,7 @@ h5 {
     padding: 12px 24px;
     border: 0;
     color: #000021;
-    background: #35a1dc;
+    background: #ddd1bf;
     line-height: 1.15;
     font-size: 16px;
 }
@@ -193,14 +211,14 @@ h5 {
 
 #remove-item:hover {
     transition: all .1s ease;
-    box-shadow: 0 0 0 0 #fff, 0 0 0 3px #35a1dc;
+    box-shadow: 0 0 0 0 #fff, 0 0 0 3px #ddd1bf;
 }
 
 /* watching page */
 
 
 .watching-container {
-    background-color: tomato;
+    /* background: linear-gradient(rgba(255, 255, 255, 0.611), rgba(255, 255, 255, 0.627)), url(https://www.evershinewalls.com.au/wp-content/uploads/2022/07/old-brick-wall-with-white-and-red-bricks.jpg); */
     display: flex;
     justify-content: space-around;
     flex-direction: row;
@@ -225,23 +243,36 @@ h5 {
 }
 
 .watch-img {
-    min-width: 75px;
-    max-width: 150px;
-    margin-bottom: 2rem;
-    box-shadow: 10px 5px 5px red;
+    min-width: 150px;
+    max-width: 300px;
+    object-fit: cover;
     border-radius: 10px;
+    box-shadow: 10px 5px 5px rgb(230, 228, 228);
 }
 
 .watching-buttons {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 3rem;
+}
+
+.watching-buttons a:hover {
+    color:rgb(160, 150, 150)
+}
+
+.watching-buttons a {
+    width: 10rem;
+    font-size: 1.5rem;
+    color: black;
+    text-decoration: none;
 }
 
 
 .watching-head h5 {
-    margin: 0 0 1.5rem 0;
+    margin: 3rem 0 3rem 0;
     text-align: center;
+    font-size: 2rem;
 }
 
 
@@ -315,7 +346,7 @@ h5 {
     padding: 12px 24px;
     border: 0;
     color: #000021;
-    background: #1de9b6;
+    background: #ddd1bf;
     line-height: 1.15;
     font-size: 16px;
 }
@@ -323,7 +354,7 @@ h5 {
 
 #submit-btn:hover {
     transition: all .1s ease;
-    box-shadow: 0 0 0 0 #fff, 0 0 0 3px #1de9b6;
+    box-shadow: 0 0 0 0 #fff, 0 0 0 3px #ddd1bf;
 }
 
 
@@ -339,12 +370,13 @@ h5 {
 }
 
 .image-div {
-    margin-right: 5rem;
+    margin-right: 10rem;
     margin-top: 5rem;
 }
 
 #edit-img {
-    /* position: absolute; */
+    border-radius: 20px;
+    box-shadow: 10px 5px 5px rgb(230, 228, 228);
     max-width: 100%;
     top: 10px;
     right: 10px;
@@ -360,7 +392,7 @@ h5 {
     padding: 12px 24px;
     border: 0;
     color: #000021;
-    background: #e96b1d;
+    background: #BEB2A0;
     line-height: 1.15;
     font-size: 16px;
 }
@@ -368,9 +400,11 @@ h5 {
 
 #edit-btn:hover {
     transition: all .1s ease;
-    box-shadow: 0 0 0 0 #fff, 0 0 0 3px #e9bd1d;
+    box-shadow: 0 0 0 0 #fff, 0 0 0 3px #BEB2A0;
 }
+
 .edit-container {
+    background: linear-gradient(rgba(255, 255, 255, 0.611), rgba(255, 255, 255, 0.627)), url(https://www.evershinewalls.com.au/wp-content/uploads/2022/07/old-brick-wall-with-white-and-red-bricks.jpg);
     display: flex;
     justify-content: space-between;
 }
@@ -378,6 +412,10 @@ h5 {
 .edit-container h3 {
    flex-direction: column;
     margin: 1rem 1rem 3rem 1rem;
+}
+
+#description {
+    width: 30rem;
 }
 
 
@@ -394,16 +432,22 @@ h5 {
 
 /* Register Page */
 
+.reg-head {
+    margin-top: 10rem;
+}
+
 .register-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin: 30px;
+  
 }
 
 
 .show-products {
+    background: linear-gradient(rgba(255, 255, 255, 0.611), rgba(255, 255, 255, 0.627)), url(https://www.evershinewalls.com.au/wp-content/uploads/2022/07/old-brick-wall-with-white-and-red-bricks.jpg);
     display: flex;
     
 }
@@ -411,11 +455,14 @@ h5 {
 .show-details {
     display: flex;
     flex-direction: column;
-    margin: 3rem 0rem 0rem 10rem
+    margin: 3rem 0rem 0rem 10rem;
+    font-size: 1.1rem;
 }
 
 .show-img {
     margin: 3rem;
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px rgb(230, 228, 228);
 }
 
 /* Watch Page */
@@ -429,7 +476,7 @@ h5 {
     padding: 12px 24px;
     border: 0;
     color: #000021;
-    background: #edbf41;
+    background: #ddd1bf;
     line-height: 1.15;
     font-size: 16px;
 }
@@ -437,7 +484,7 @@ h5 {
 
 #watch-btn:hover {
     transition: all .1s ease;
-    box-shadow: 0 0 0 0 #fff, 0 0 0 3px #e9bd1d;
+    box-shadow: 0 0 0 0 #fff, 0 0 0 3px #ddd1bf;
 }
 
 #watch-buy {
@@ -450,7 +497,7 @@ h5 {
     padding: 12px 24px;
     border: 0;
     color: #000021;
-    background: #edbf41;
+    background: #ddd1bf;
     line-height: 1.15;
     font-size: 16px;
 }
@@ -458,7 +505,7 @@ h5 {
 
 #watch-buy:hover {
     transition: all .1s ease;
-    box-shadow: 0 0 0 0 #fff, 0 0 0 3px #e9bd1d;
+    box-shadow: 0 0 0 0 #fff, 0 0 0 3px #ddd1bf;
 }
 .OOS {
     margin: 0 0 1rem 0;
@@ -477,6 +524,8 @@ h5 {
 .home-login {
     margin: 10rem;
     font-size: 3rem;
+    color: brown;
+    
 }
 
 .home-register {
@@ -484,8 +533,28 @@ h5 {
     font-size: 3rem;
 }
 
+.home-login a {
+    color: black;
+    text-decoration: none;
+}
+
+.home-login a:hover {
+    color: #926b31;
+    text-decoration: underline;
+}
+
+.home-register a {
+    color: black;
+    text-decoration: none;
+}
+
+.home-register a:hover {
+    color: #926b31;
+    text-decoration: underline;
+}
+
 .home-head {
-    font-size: 6rem;
+    font-size: 8rem;
     text-align: center;
     margin: 1rem 0 0 0;
 }
@@ -502,11 +571,39 @@ h5 {
     margin: 2rem 0 4rem 0;
 }
 
+
+
 .register-head {
     text-align: center;
     margin: 2rem 0 4rem 0;
 }
 
+.signin-btns {
+    margin: 1rem;
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    font-weight: 400;
+    border-radius: 3px;
+    padding: 8px 24px;
+    border: 0;
+    color: #000021;
+    background: #BEB2A0;
+    line-height: 1.15;
+    font-size: 16px;
+}
+
+.login-details {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.signin-btns:hover {
+    transition: all .1s ease;
+    box-shadow: 0 0 0 0 #fff, 0 0 0 3px #BEB2A0;
+}
 
 @media screen and (max-width: 950px) {
     
