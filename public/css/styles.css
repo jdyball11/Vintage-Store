@@ -112,6 +112,8 @@ h5 {
     min-width: 150px;
     max-width: 300px;
     object-fit: cover;
+    box-shadow: 10px 5px 5px red;
+    border-radius: 10px;
 }
 
 .index-items h3 {
@@ -158,6 +160,8 @@ h5 {
     min-width: 150px;
     max-width: 300px;
     object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px red;
 }
 
 .collection-buttons {
@@ -197,6 +201,8 @@ h5 {
     justify-content: space-around;
     flex-direction: row;
     flex-wrap: wrap;
+    align-items: flex-end;
+    height: 100%;
 }
 
 .watching-items {
@@ -216,7 +222,9 @@ h5 {
 .watch-img {
     min-width: 75px;
     max-width: 150px;
-    
+    margin-bottom: 2rem;
+    box-shadow: 10px 5px 5px red;
+    border-radius: 10px;
 }
 
 .watching-buttons {
@@ -228,7 +236,9 @@ h5 {
 
 .watching-head h5 {
     margin: 0 0 1.5rem 0;
+    text-align: center;
 }
+
 
 
 
@@ -239,7 +249,6 @@ h5 {
     flex-direction: column;
     align-items: flex-start;
     margin: 30px;
-    /* width: 80rem */
 }
 
 .input {

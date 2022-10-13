@@ -6,6 +6,12 @@
     </div>
     <div class="index-user">
         <ul>
+            <% if (messages.success) { %>
+                <% for (let msg of messages.success) { %>
+                    <p><%= msg %> </p>
+                <% } %>
+                
+            <% } %>
             <li>
                 <form method="post" action="/logout">
                 <input type="submit" value="Logout" class="logout"/></form>
@@ -14,6 +20,7 @@
             <li><a href="/vintage/mycollection/watch">Watchlist</a></li>
             <li><a href="/vintage/mycollection/create">Add New Item</a></li>
             <li> User: <%= name.username %></li>
+            
             
         </ul>
        
@@ -26,12 +33,7 @@
 
 
 <div class="collection-container">
-    <% if (messages.success) { %>
-        <% for (let msg of messages.success) { %>
-            <p><%= msg %> </p>
-        <% } %>
-        
-    <% } %>
+    
 <% vintage.forEach((element) => { %>
      <% if (element.user_id.valueOf() === name._id.valueOf()) { %>
         <div class="collection-items">
