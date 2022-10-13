@@ -605,6 +605,11 @@ h5 {
     box-shadow: 0 0 0 0 #fff, 0 0 0 3px #BEB2A0;
 }
 
+.error {
+    text-align: center;
+    font-size: 10rem;
+}
+
 @media screen and (max-width: 950px) {
     
 
