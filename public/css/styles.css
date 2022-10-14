@@ -101,7 +101,6 @@ h5 {
 }
 
 .products-container {
-    /* background: linear-gradient(rgba(255, 255, 255, 0.462), rgba(255, 255, 255, 0.463)), url(https://cdn.hovia.com/app/uploads/white-warehouse-brick-plain.jpg); */
     display: flex;
     justify-content: space-around;
     flex-direction: row;
@@ -149,7 +148,6 @@ h5 {
 
 
 .collection-container {
-    /* background: linear-gradient(rgba(255, 255, 255, 0.611), rgba(255, 255, 255, 0.627)), url(https://www.evershinewalls.com.au/wp-content/uploads/2022/07/old-brick-wall-with-white-and-red-bricks.jpg); */
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
@@ -218,7 +216,6 @@ h5 {
 
 
 .watching-container {
-    /* background: linear-gradient(rgba(255, 255, 255, 0.611), rgba(255, 255, 255, 0.627)), url(https://www.evershinewalls.com.au/wp-content/uploads/2022/07/old-brick-wall-with-white-and-red-bricks.jpg); */
     display: flex;
     justify-content: space-around;
     flex-direction: row;
