@@ -140,7 +140,7 @@ router.put('/vintage/:id/buy', async (req, res) => {
 
 
 //SHOW page
-router.get('/vintage/:id', async (req, res) => {
+router.get('/vintage/:id', async (req, res, next) => {
     try {
     const vintage = await Vintage.findById(req.params.id)
     if (vintage) {
