@@ -59,5 +59,5 @@ mongoose.connect(dbURL, () => {
 })
 
 app.listen(PORT, () => {
-    console.log('Listening on port', PORT)
+    console.log('Listening on port', PORT, "0.0.0.0")
 })
